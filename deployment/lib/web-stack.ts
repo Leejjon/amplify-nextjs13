@@ -100,5 +100,18 @@ export class WebAmplifyStack extends Stack {
                 }
             ]
         });
+
+        new amplify.CfnBranch(this, "extratest", {
+            appId: amplifyApp.attrAppId,
+            branchName: "extratest",
+            stage: "PRODUCTION",
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "app"
+                }
+            ]
+        });
     }
 }
