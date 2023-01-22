@@ -9,8 +9,10 @@ applications:
             - yarn install
         build:
           commands:
+            - pwd
             - yarn build
             - ls -la
+            - ls -la app/.next
             - cp -R node_modules app/.next/standalone/node_modules
             - cd app
             - cp next.config.js .next/standalone
