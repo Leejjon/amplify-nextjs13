@@ -116,7 +116,7 @@ export class WebAmplifyStack extends Stack {
 
         new amplify.CfnBranch(this, "main-with-monorepo", {
             appId: amplifyApp.attrAppId,
-            branchName: "extratest",
+            branchName: "main-with-monorepo",
             stage: "PRODUCTION",
             enableAutoBuild: true,
             environmentVariables: [
