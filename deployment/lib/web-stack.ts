@@ -126,5 +126,12 @@ export class WebAmplifyStack extends Stack {
                 }
             ]
         });
+
+        new amplify.CfnBranch(this, "main-app-in-folder", {
+            appId: amplifyApp.attrAppId,
+            branchName: "main-app-in-folder",
+            stage: "PRODUCTION",
+            enableAutoBuild: true
+        });
     }
 }
