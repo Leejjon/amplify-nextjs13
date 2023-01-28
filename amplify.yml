@@ -12,6 +12,9 @@ applications:
             - pwd
             - yarn build
             - pwd
+            - cd app
+            - ls -la
+            - ls -la .next/standalone
         postBuild:
           commands:
             - shopt -s dotglob
