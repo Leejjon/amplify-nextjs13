@@ -138,7 +138,13 @@ export class WebAmplifyStack extends Stack {
             appId: amplifyApp.attrAppId,
             branchName: "waleeds-solution",
             stage: "PRODUCTION",
-            enableAutoBuild: true
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "apps/docs"
+                }
+            ]
         });
     }
 }
