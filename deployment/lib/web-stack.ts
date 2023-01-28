@@ -133,7 +133,7 @@ export class WebAmplifyStack extends Stack {
             stage: "PRODUCTION",
             enableAutoBuild: true
         });
-
+        // Why doesn't it use the latest commit.
         new amplify.CfnBranch(this, "waleeds-solution", {
             appId: amplifyApp.attrAppId,
             branchName: "waleeds-solution",
