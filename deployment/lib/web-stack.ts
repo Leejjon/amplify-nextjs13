@@ -133,18 +133,18 @@ export class WebAmplifyStack extends Stack {
             stage: "PRODUCTION",
             enableAutoBuild: true
         });
-        // Why doesn't it use the latest commit.
-        new amplify.CfnBranch(this, "waleeds-solution", {
-            appId: amplifyApp.attrAppId,
-            branchName: "waleeds-solution",
-            stage: "PRODUCTION",
-            enableAutoBuild: true,
-            environmentVariables: [
-                {
-                    name: "AMPLIFY_MONOREPO_APP_ROOT",
-                    value: "apps/docs"
-                }
-            ]
-        });
+        // // Why doesn't it use the latest commit.
+        // new amplify.CfnBranch(this, "waleeds-solution", {
+        //     appId: amplifyApp.attrAppId,
+        //     branchName: "waleeds-solution",
+        //     stage: "PRODUCTION",
+        //     enableAutoBuild: true,
+        //     environmentVariables: [
+        //         {
+        //             name: "AMPLIFY_MONOREPO_APP_ROOT",
+        //             value: "apps/docs"
+        //         }
+        //     ]
+        // });
     }
 }
