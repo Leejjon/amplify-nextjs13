@@ -133,5 +133,12 @@ export class WebAmplifyStack extends Stack {
             stage: "PRODUCTION",
             enableAutoBuild: true
         });
+
+        new amplify.CfnBranch(this, "waleeds-solution", {
+            appId: amplifyApp.attrAppId,
+            branchName: "waleeds-solution",
+            stage: "PRODUCTION",
+            enableAutoBuild: true
+        });
     }
 }
