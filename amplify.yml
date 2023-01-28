@@ -18,8 +18,8 @@ applications:
         postBuild:
           commands:
             - shopt -s dotglob
-            - mv -f app/.next/standalone/app/* .next/standalone
-            - rm -rf app/.next/standalone/app
+            - mv -f .next/standalone/app/* .next/standalone
+            - rm -rf .next/standalone/app
       artifacts:
         baseDirectory: app/.next/
         files:
