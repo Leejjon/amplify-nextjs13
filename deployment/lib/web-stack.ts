@@ -92,5 +92,64 @@ export class WebAmplifyStack extends Stack {
             stage: "PRODUCTION",
             enableAutoBuild: true,
         });
+
+        new amplify.CfnBranch(this, "WorkspaceBranch", {
+            appId: amplifyApp.attrAppId,
+            branchName: "with-workspaces",
+            stage: "PRODUCTION",
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "app"
+                }
+            ]
+        });
+
+        new amplify.CfnBranch(this, "extratest", {
+            appId: amplifyApp.attrAppId,
+            branchName: "extratest",
+            stage: "PRODUCTION",
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "app"
+                }
+            ]
+        });
+
+        new amplify.CfnBranch(this, "main-with-monorepo", {
+            appId: amplifyApp.attrAppId,
+            branchName: "main-with-monorepo",
+            stage: "PRODUCTION",
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "app"
+                }
+            ]
+        });
+
+        new amplify.CfnBranch(this, "main-app-in-folder", {
+            appId: amplifyApp.attrAppId,
+            branchName: "main-app-in-folder",
+            stage: "PRODUCTION",
+            enableAutoBuild: true
+        });
+        // Why doesn't it use the latest commit.
+        new amplify.CfnBranch(this, "waleeds-solution", {
+            appId: amplifyApp.attrAppId,
+            branchName: "waleeds-solution",
+            stage: "PRODUCTION",
+            enableAutoBuild: true,
+            environmentVariables: [
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "apps/docs"
+                }
+            ]
+        });
     }
 }
