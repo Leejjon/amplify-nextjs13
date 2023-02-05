@@ -20,12 +20,11 @@ applications:
 #            - shopt -s dotglob
 #            - mv -f .next/standalone/app/* .next/standalone
 #            - rm -rf .next/standalone/app
-            - cp -r .next/standalone/app/* .
-            - mv .next/standalone/app/.next .
+            - cd .next/standalone
+            - cp -r app/* .
+            - mv app/.next .
+            - cd ../..
       artifacts:
         baseDirectory: .next
         files:
           - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
