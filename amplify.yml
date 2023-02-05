@@ -1,17 +1,30 @@
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm ci
-    build:
-      commands:
-        - npm run build
-        - ls -la
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+applications:
+  - appRoot: app
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd ..
+            - yarn install
+        build:
+          commands:
+            - pwd
+            - yarn build
+            - pwd
+            - cd app
+            - ls -la
+            - ls -la .next/standalone
+        postBuild:
+          commands:
+#            - shopt -s dotglob
+#            - mv -f .next/standalone/app/* .next/standalone
+#            - rm -rf .next/standalone/app
+            - cd .next/standalone
+            - cp -r app/* .
+            - mv app/.next .
+            - cd ../..
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
