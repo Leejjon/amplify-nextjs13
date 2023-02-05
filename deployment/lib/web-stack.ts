@@ -57,6 +57,7 @@ export class WebAmplifyStack extends Stack {
             iamServiceRole: amplifyRole.roleArn,
             repository: props.repository,
             oauthToken: secret.secretValueFromJson("GithubOauthToken").unsafeUnwrap(),
+            platform: "WEB_COMPUTE",
             basicAuthConfig: {
                 enableBasicAuth: true,
                 password: "awssupport",
