@@ -21,3 +21,4 @@ github account
 * Verify that the codepipeline runs once and creates the infra for the amplify app
 * Go to the amplify app 
 * The main branch should deploy succesfully and work
+* PS: I turned on the basic auth feature in amplify, the username is "hello" and the password is "awssupport". You can disable it in web-stack.ts
