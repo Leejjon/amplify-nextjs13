@@ -77,6 +77,10 @@ export class WebAmplifyStack extends Stack {
                 {
                     name: "AMPLIFY_SKIP_BACKEND_BUILD",
                     value: "TRUE"
+                },
+                {
+                    name: "AMPLIFY_MONOREPO_APP_ROOT",
+                    value: "app"
                 }
             ],
         });
@@ -86,19 +90,6 @@ export class WebAmplifyStack extends Stack {
             branchName: props.branchName,
             stage: "PRODUCTION",
             enableAutoBuild: true,
-        });
-
-        new amplify.CfnBranch(this, "WorkspaceBranch", {
-            appId: amplifyApp.attrAppId,
-            branchName: "with-workspaces",
-            stage: "PRODUCTION",
-            enableAutoBuild: true,
-            environmentVariables: [
-                {
-                    name: "AMPLIFY_MONOREPO_APP_ROOT",
-                    value: "app"
-                }
-            ]
         });
     }
 }
