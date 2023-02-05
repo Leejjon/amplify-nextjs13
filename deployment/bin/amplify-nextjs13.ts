@@ -10,5 +10,5 @@ new PipelineStack(app, "amplify-nextjs13-infra-pipeline", {
         "arn:aws:codestar-connections:eu-central-1:039085306114:connection/010d9616-2ce5-4d82-a61d-75938f7b0deb",
     pipelineName: "amplify-pipeline",
     repositoryName: "leejjon/amplify-nextjs13",
-    branchName: "with-workspaces"
+    branchName: "main"
 });
