@@ -17,11 +17,13 @@ applications:
             - ls -la .next/standalone
         postBuild:
           commands:
-            - shopt -s dotglob
-            - mv -f .next/standalone/app/* .next/standalone
-            - rm -rf .next/standalone/app
+#            - shopt -s dotglob
+#            - mv -f .next/standalone/app/* .next/standalone
+#            - rm -rf .next/standalone/app
+            - cp -r .next/standalone/app/* .
+            - mv .next/standalone/app/.next .
       artifacts:
-        baseDirectory: app/.next/
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
