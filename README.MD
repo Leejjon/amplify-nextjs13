@@ -15,7 +15,7 @@ github account
 * Give it a name (in my case "secret") and save it
 * Copy the arn of this secret and paste it in line 29 of the web-stack.ts
 * Browse to the deployment folder and run "npm install" and "npm run build"
-* Type "cdk ls" and "cdk sync" to verify if there are no errors in your cdk code
+* Type "cdk ls" and "cdk synth" to verify if there are no errors in your cdk code
 * I also ran this command but I'm not sure if it was needed: cdk bootstrap aws://accountid/region
 * cdk deploy
 * Verify that the codepipeline runs once and creates the infra for the amplify app
