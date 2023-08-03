@@ -58,11 +58,6 @@ export class WebAmplifyStack extends Stack {
             repository: props.repository,
             oauthToken: secret.secretValueFromJson("GithubOauthToken").unsafeUnwrap(),
             platform: "WEB_COMPUTE",
-            basicAuthConfig: {
-                enableBasicAuth: true,
-                password: "awssupport",
-                username: "hello",
-            },
             environmentVariables: [
                 // {
                 //   name: "AMPLIFY_MONOREPO_APP_ROOT",
