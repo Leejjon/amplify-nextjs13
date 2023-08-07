@@ -88,17 +88,17 @@ export class WebAmplifyStack extends Stack {
             enableAutoBuild: true,
         });
 
-        new amplify.CfnDomain(this, "InternalAmplifyDomain", {
-            appId: amplifyApp.attrAppId,
-            domainName: "opstelling.app",
-            enableAutoSubDomain: false,
-            subDomainSettings: [
-                {
-                    branchName: props.branchName,
-                    prefix: "mijnomgeving",
-                },
-            ],
-        });
+        // new amplify.CfnDomain(this, "InternalAmplifyDomain", {
+        //     appId: amplifyApp.attrAppId,
+        //     domainName: "opstelling.app",
+        //     enableAutoSubDomain: false,
+        //     subDomainSettings: [
+        //         {
+        //             branchName: props.branchName,
+        //             prefix: "mijnomgeving",
+        //         },
+        //     ],
+        // });
 
 
     }
